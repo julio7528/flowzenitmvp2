@@ -45,11 +45,8 @@ coverage/
 .wrangler/
 .sites-runtime/
 
-# Generated framework output beneath the Site's static directory
-# Keep dist/index.html, dist/styles.css, and dist/favicon.svg: Sites serves these files.
-dist/client/
-dist/server/
-dist/.vite/
+# Sites/Vinext build output
+dist/
 
 # Logs and operating-system files
 *.log

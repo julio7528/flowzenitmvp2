@@ -4,7 +4,7 @@ import "./globals.css";
 export const metadata: Metadata = {
   title: "Task Agent — gestão inteligente de tarefas",
   description:
-    "Base inicial de um sistema de tarefas organizado por linguagem natural e evoluído por etapas.",
+    "Organize seu trabalho em um espaço de tarefas protegido por autenticação do ChatGPT.",
   icons: {
     icon: "/favicon.svg",
     shortcut: "/favicon.svg",
