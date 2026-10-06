@@ -1,13 +1,13 @@
 # Roadmap do Task Agent
 
-**Fase atual:** Fase 2 — estrutura visual inicial e design system, concluída. A interface-base e a navegação visual estão preparadas; as áreas de produto ainda não executam operações. As fases seguintes permanecem planejadas e não foram iniciadas.
+**Fase atual:** Fase 4 — Supabase/PostgreSQL, modelo de dados e RLS. As Fases 0 a 3 estão concluídas; ainda não há persistência de perfis ou tarefas neste projeto.
 
 | Fase | Escopo | Estado |
 | --- | --- | --- |
 | 0 | Fundação e arquitetura | Concluída |
 | 1 | GitHub, estrutura inicial, documentação e preparação segura para versionamento | Concluída; branch main do repositório público conectada |
 | 2 | Interface base e design do produto | Concluída; páginas-base e padrões visuais reutilizáveis |
-| 3 | Autenticação Sign in with ChatGPT | Planejada |
+| 3 | Autenticação Sign in with ChatGPT | Concluída; login real, sessão e proteção server-side validados |
 | 4 | Supabase/PostgreSQL, modelo de dados e RLS | Planejada |
 | 5 | Criação, leitura, edição e conclusão de tarefas | Planejada |
 | 6 | Painel administrativo funcional | Planejada |
@@ -34,4 +34,4 @@
 
 A IA poderá interpretar pedidos e propor operações. A aplicação continuará validando os dados, verificando identidade e autorização no servidor, solicitando confirmação quando necessário e executando somente ações permitidas. Providers de IA e integrações externas permanecerão isolados atrás de adaptadores, conforme [architecture.md](architecture.md).
 
-As páginas Dashboard, Tarefas, Agente, Calendário, Configurações e Admin são somente molduras visuais nesta fase. Dados reais, CRUD, autenticação, permissões e integrações dependem das fases planejadas acima.
+Dashboard, Tarefas, Agente, Calendário, Configurações e Admin mantêm estados-base. A autenticação e a proteção server-side estão implementadas; banco, RLS, CRUD e integrações continuam pendentes nas fases correspondentes.
