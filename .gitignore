@@ -35,6 +35,7 @@ node_modules/
 
 # Framework and test output
 .next/
+next-env.d.ts
 .vinext/
 .cache/
 coverage/
