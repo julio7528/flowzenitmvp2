@@ -4,7 +4,7 @@ Sistema de gerenciamento de tarefas que deverá permitir organização por lingu
 
 ## Estado do projeto
 
-**Fase atual: Fase 3 — autenticação.** O acesso usa Sign in with ChatGPT nativo do ChatGPT Sites. As páginas de Dashboard, Tarefas, Agente, Calendário, Configurações e Admin continuam como estados vazios; a autenticação é a única funcionalidade de produto implementada.
+**Estado: Fase 3 concluída; Fase 4 é a próxima.** O acesso usa Sign in with ChatGPT nativo do ChatGPT Sites. Dashboard, Tarefas, Agente, Calendário, Configurações e Admin continuam como estados vazios; a autenticação é a única funcionalidade de produto implementada.
 
 O Site permanece no projeto existente [task-agent.julio7528.chatgpt.site](https://task-agent.julio7528.chatgpt.site) e conserva a audiência configurada no Sites. Não há banco de dados de negócio, tarefas reais, agente de IA, calendário ou painel administrativo funcional.
 
@@ -30,7 +30,7 @@ O Site permanece no projeto existente [task-agent.julio7528.chatgpt.site](https:
 - Todo usuário recebe `user`. Uma role `admin` exige correspondência exata com um identificador listado na configuração de runtime `TASK_AGENT_ADMIN_EXTERNAL_USER_IDS` do Site. A variável fica no Worker, não no frontend, e é opcional; sem ela, todos são `user`.
 - O link Admin só aparece para `admin`; a rota também exige essa role no servidor.
 
-Não existe perfil persistido. `auth/types.ts` registra somente a forma futura do profile; Supabase e PostgreSQL continuam fora do escopo desta fase.
+Não existe perfil persistido. `auth/types.ts` registra somente a forma futura do profile; Supabase e PostgreSQL aguardam a Fase 4.
 
 ## Desenvolvimento local
 
