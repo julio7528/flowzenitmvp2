@@ -1,10 +1,10 @@
 # Arquitetura do Task Agent
 
-**Status da arquitetura:** definida na Fase 0; preservada na Fase 1
+**Status da arquitetura:** definida na Fase 0 e preservada nas Fases 1 e 2
 
 **Nome do produto:** provisório
 
-**Estado atual:** Fase 1 concluída localmente; Fase 2 ainda não iniciada
+**Estado atual:** Fase 2 concluída; somente a camada visual foi adicionada nesta fase
 
 **Runtime atual:** arquivos HTML e CSS estáticos servidos pelo ChatGPT Sites
 
@@ -123,17 +123,27 @@ lib/                  utilitários compartilhados compatíveis com o starter
 
 Esses diretórios são pontos de extensão, não uma exigência para criá-los agora. O layout nativo do Sites/Vinext será preservado quando atender à responsabilidade; cada módulo só será criado quando tiver uma implementação real.
 
-## Decisões estabelecidas na Fase 0 e preservadas na Fase 1
+Na Fase 2, dist/index.html compõe o shell e as páginas-base; dist/styles.css concentra os tokens e padrões visuais; dist/app.js cuida somente da navegação local por hash e do menu recolhível em telas pequenas. Nenhum serviço de aplicação, domínio, autenticação ou acesso a dados foi adicionado.
 
-- Usar HTML e CSS estáticos para o shell de uma única rota nesta fase, sem instalar dependências para funcionalidades que ainda não existem.
+## Interface inicial da Fase 2
+
+O shell apresenta uma sidebar, topbar, área de conteúdo e seis destinos: Dashboard, Tarefas, Agente, Calendário, Configurações e Admin. Todos são páginas-base com mensagens vazias explícitas. Admin e a área de conta são apenas espaços visuais; não oferecem gerenciamento, autenticação ou controle de permissões.
+
+A navegação por hash mantém os links utilizáveis e permite atualizar a página ativa sem serviço de roteamento. Em telas estreitas, o menu torna-se um drawer com botão de abertura, fechamento por Escape e retorno de foco. A interface inclui landmarks semânticos, link para pular ao conteúdo, rótulos acessíveis, foco visível e redução de movimento.
+
+dist/styles.css define tokens de cor, tipografia, espaçamento, bordas, foco e sombra. As classes reutilizáveis cobrem layout, botões, campos, cards, badges, tabelas, menus, diálogos, carregamento, estados vazios e avisos de informação, erro e sucesso. Esses padrões são apenas apresentação; não estão conectados a fluxos de produto.
+
+## Decisões estabelecidas e preservadas até a Fase 2
+
+- Manter a camada visual estática em HTML, CSS e JavaScript nativos enquanto não houver regras de negócio ou serviços de servidor.
 - Adotar o runtime de aplicação suportado pelo Sites quando uma fase futura exigir lógica de servidor, rotas ou estado interativo.
-- Manter apenas um shell inicial; os itens ainda não implementados aparecem como indisponíveis e não simulam operações.
-- Registrar a arquitetura neste documento em vez de adicionar abstrações sem uso.
+- Tratar as páginas desta fase como molduras visuais; não simular operações futuras ou dados de negócio.
+- Preservar o starter Sites/Vinext e não criar diretórios vazios ou abstrações sem consumidores.
 - Não conectar provedor de IA, autenticação, banco, calendário ou painel administrativo nesta fase.
 
 ## Estado do escopo
 
-- Fase 0 concluída: shell estático responsivo e arquitetura documentada.
-- Fase 1 concluída: estrutura existente preservada; README, documentação da arquitetura e roadmap; regras de exclusão Git revisadas. O código está versionado na branch `main` do repositório público [`julio7528/flowzenitmvp2`](https://github.com/julio7528/flowzenitmvp2).
-- Fase 2 ainda não iniciada.
-- Funcionalidades futuras não implementadas: login, tarefas e CRUD, Supabase, DeepSeek, saída estruturada executável, ações, confirmações funcionais, Google Calendar, Admin, logs de execução e arquitetura multiagente.
+- Fase 0 concluída: fundação e arquitetura documentadas.
+- Fase 1 concluída: estrutura existente preservada e projeto versionado na branch `main` do repositório público [`julio7528/flowzenitmvp2`](https://github.com/julio7528/flowzenitmvp2).
+- Fase 2 concluída: shell responsivo, navegação pelas páginas-base e padrões visuais reutilizáveis.
+- Funcionalidades futuras não implementadas: login, tarefas e CRUD, Supabase, DeepSeek, saída estruturada executável, ações, confirmações funcionais, Google Calendar, administração funcional, logs de execução e arquitetura multiagente.
