@@ -1,0 +1,61 @@
+# Environment files and secrets
+.env
+.env.*
+**/.env
+**/.env.*
+!.env.example
+*.pem
+*.key
+*.p12
+*.pfx
+*.token
+token
+token.*
+tokens
+tokens.*
+*.secret
+*.secret.*
+token.json
+tokens.json
+credentials.json
+credentials.*
+*-credentials.*
+**/credentials.json
+**/credentials.*
+credentials/
+**/credentials/
+secrets/
+**/secrets/
+service-account*.json
+*-service-account.json
+
+# Dependencies and local package-manager state
+node_modules/
+.npm/
+
+# Framework and test output
+.next/
+.vinext/
+.cache/
+coverage/
+.nyc_output/
+*.tsbuildinfo
+
+# Local Cloudflare/Sites state
+.wrangler/
+.sites-runtime/
+
+# Generated framework output beneath the Site's static directory
+# Keep dist/index.html, dist/styles.css, and dist/favicon.svg: Sites serves these files.
+dist/client/
+dist/server/
+dist/.vite/
+
+# Logs and operating-system files
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+.DS_Store
+Thumbs.db

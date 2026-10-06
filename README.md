@@ -8,14 +8,14 @@ Sistema de gerenciamento de tarefas planejado para que a pessoa possa organizar,
 
 O shell estático inicial está publicado como um ChatGPT Site privado: [task-agent.julio7528.chatgpt.site](https://task-agent.julio7528.chatgpt.site). Ele não oferece operações de tarefas. Autenticação, persistência, chamadas de IA, validação executável, autorização de ações, administração e Google Calendar ainda não foram implementados.
 
-O projeto tem um repositório Git local na branch `main`, sem remote configurado. A integração GitHub conectada permite trabalhar com repositórios existentes, mas não disponibiliza criação de repositório; não foi encontrado um repositório existente correspondente ao projeto. O checkout está preparado para ser ligado posteriormente a um repositório privado.
+O projeto está versionado localmente na branch `main`, com `origin` apontando para [`julio7528/flowzenitmvp2`](https://github.com/julio7528/flowzenitmvp2). O repositório é público, conforme autorizado para esta publicação.
 
 ## Stack planejada
 
 | Componente | Estado |
 | --- | --- |
 | ChatGPT Sites | Hospeda o shell estático atual. |
-| GitHub | Versionamento previsto; ainda sem remote. |
+| GitHub | Repositório público `julio7528/flowzenitmvp2`, branch `main`. |
 | Sign in with ChatGPT | Planejado; não implementado. |
 | Supabase / PostgreSQL | Persistência planejada; não conectada. |
 | DeepSeek API | Provider de IA planejado; sem chamadas ou credenciais configuradas. |
