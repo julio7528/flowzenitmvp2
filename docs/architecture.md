@@ -1,10 +1,10 @@
 # Arquitetura do Task Agent
 
-**Status da arquitetura:** definida na Fase 0 e evoluída incrementalmente até a Fase 3
+**Status da arquitetura:** definida na Fase 0 e evoluída incrementalmente até a Fase 3 concluída
 
 **Nome do produto:** provisório
 
-**Estado atual:** Fase 3 em validação; autenticação Sites e proteção server-side adicionadas
+**Estado atual:** Fase 3 concluída; Fase 4 (Supabase, modelo de dados e RLS) pendente
 
 **Runtime atual:** aplicação Vinext em Cloudflare Worker; as rotas protegidas verificam identidade no servidor
 
@@ -151,7 +151,7 @@ O shell apresenta sidebar, topbar, menu da conta e seis destinos: Dashboard, Tar
 
 A navegação usa rotas do App Router, mantendo o shell visual e o drawer responsivo da Fase 2. Em telas estreitas, o menu tem botão de abertura, fechamento por Escape e retorno de foco. A interface inclui landmarks semânticos, link para pular ao conteúdo, rótulos acessíveis, foco visível e redução de movimento.
 
-dist/styles.css define tokens de cor, tipografia, espaçamento, bordas, foco e sombra. As classes reutilizáveis cobrem layout, botões, campos, cards, badges, tabelas, menus, diálogos, carregamento, estados vazios e avisos de informação, erro e sucesso. Esses padrões são apenas apresentação; não estão conectados a fluxos de produto.
+`app/globals.css` define tokens de cor, tipografia, espaçamento, bordas, foco e sombra. As classes reutilizáveis cobrem layout, botões, campos, cards, badges, tabelas, menus, diálogos, carregamento, estados vazios e avisos de informação, erro e sucesso. Esses padrões são apenas apresentação; não estão conectados a fluxos de produto.
 
 ## Decisões estabelecidas e preservadas até a Fase 3
 
@@ -166,5 +166,6 @@ dist/styles.css define tokens de cor, tipografia, espaçamento, bordas, foco e s
 - Fase 0 concluída: fundação e arquitetura documentadas.
 - Fase 1 concluída: estrutura existente preservada e projeto versionado na branch `main` do repositório público [`julio7528/flowzenitmvp2`](https://github.com/julio7528/flowzenitmvp2).
 - Fase 2 concluída: shell responsivo, navegação pelas páginas-base e padrões visuais reutilizáveis.
-- Fase 3 em validação: Sign in with ChatGPT, sessão Sites, identidade interna e proteção por role.
+- Fase 3 concluída: Sign in with ChatGPT, sessão Sites, identidade interna e proteção por role; login real validado no Site.
+- Fase 4 pendente: Supabase/PostgreSQL, perfil persistido, modelo de tarefas e RLS ainda não foram adicionados.
 - Funcionalidades futuras não implementadas: persistência de profiles, tarefas e CRUD, Supabase, DeepSeek, saída estruturada executável, ações, confirmações funcionais, Google Calendar, administração funcional, logs de execução e arquitetura multiagente.
