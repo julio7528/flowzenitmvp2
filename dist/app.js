@@ -6,6 +6,7 @@ const menuToggle = document.querySelector("#menu-toggle");
 const currentPageLabel = document.querySelector("#current-page-label");
 const pages = [...document.querySelectorAll(".page-view[data-page]")];
 const navigationLinks = [...document.querySelectorAll("[data-route]")];
+const brandLink = document.querySelector(".brand");
 const drawerBreakpoint = window.matchMedia("(max-width: 760px)");
 const pageNames = new Map(pages.map((page) => [page.dataset.page, page.querySelector("h1")]));
 
@@ -61,6 +62,11 @@ menuToggle.addEventListener("click", () => {
 });
 
 sidebarBackdrop.addEventListener("click", () => setDrawerOpen(false, true));
+brandLink.addEventListener("click", (event) => {
+  if (event.button !== 0 || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
+  setDrawerOpen(false);
+  renderRoute("dashboard", true);
+});
 
 for (const link of navigationLinks) {
   link.addEventListener("click", (event) => {
@@ -70,7 +76,10 @@ for (const link of navigationLinks) {
   });
 }
 
-window.addEventListener("hashchange", () => renderRoute(readRoute(), true));
+window.addEventListener("hashchange", () => {
+  setDrawerOpen(false);
+  renderRoute(readRoute(), true);
+});
 
 window.addEventListener("keydown", (event) => {
   if (event.key === "Escape" && appShell.classList.contains("is-drawer-open")) {
